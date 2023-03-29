@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
     'products.apps.ProductsConfig',
+    'store.apps.StoreConfig',
     'cars.apps.CarsConfig'  # This app is for example use only
 ]
 

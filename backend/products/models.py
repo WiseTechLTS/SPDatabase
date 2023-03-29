@@ -65,6 +65,7 @@ class Product(models.Model):
         (29.00, 29.00),
         (29.95, 29.95),
         (32.50, 32.50),
+        (35.00, 35.00),
         (39.95, 39.95),
     )
 
@@ -104,7 +105,7 @@ class Product(models.Model):
     # collection is Fight Gear, Street Wear Clothing and Home Page
     category = models.CharField(max_length=25, unique=False, default='T-Shirts', choices=CATEGORY)
     # category is T-Shirts, Hoodies, Shorts, etc.
-    name = models.CharField(max_length=100, unique=True, default='Scrap Poverty', choices=NAME)
+    name = models.CharField(max_length=100, default='Scrap Poverty', choices=NAME)
     # name is the name of the product
     size = models.CharField(max_length=4, choices=SHIRT_SIZES, default='S')
     # size is the size of the product
@@ -112,13 +113,15 @@ class Product(models.Model):
     # price is the price of the product
     in_stock = models.BooleanField(default=True)
     # in_stock is a boolean to check if the product is in stock
-    url = models.CharField(max_length=200, unique=True, choices=URL)
+    url = models.CharField(max_length=200, choices=URL)
     # url is the url of the product
     image = models.ImageField(upload_to='images', blank=True)
     # image is the image of the product
     image_url = models.CharField(max_length=200, blank=True)
     # image_url is the url of the image of the product
     body = models.TextField(max_length=1000)
+    # body is the description of the product
+    quantity = models.IntegerField(default=1)
 
     # image_tag is going to show the image in the admin panel
     def image_tag(self):  # new
