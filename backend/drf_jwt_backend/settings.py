@@ -147,6 +147,13 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=20),
 }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite1',
+    }
+}
+
 try:
     from drf_jwt_backend.local_settings import *
 except ImportError:
