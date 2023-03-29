@@ -96,7 +96,10 @@ class Product(models.Model):
          "https://scrap-soldier-clothing-fight-gear.myshopify.com/products/military-style-ribbon-hoodie"),
     )
 
-
+    IN_STOCK = (
+        ('Yes', 'Yes'),
+        ('No', 'No'),
+    )
 
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, default='admin')
@@ -111,13 +114,13 @@ class Product(models.Model):
     # size is the size of the product
     price = models.FloatField(max_length=5, unique=False, choices=PRICE)
     # price is the price of the product
-    in_stock = models.BooleanField(default=True)
+    stock = models.BooleanField(default=True, choices=IN_STOCK)
     # in_stock is a boolean to check if the product is in stock
     url = models.CharField(max_length=200, choices=URL)
     # url is the url of the product
-    image = models.ImageField(upload_to='images', blank=True)
+    image = models.ImageField(upload_to='images', blank=True, null=True)
     # image is the image of the product
-    image_url = models.CharField(max_length=200, blank=True)
+    imageUrl = models.CharField(max_length=200, blank=True, null=True)
     # image_url is the url of the image of the product
     body = models.TextField(max_length=1000)
     # body is the description of the product
