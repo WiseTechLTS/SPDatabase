@@ -11,13 +11,11 @@ mysql-connector-python = "==8.0.32"
 django-cors-headers = "==3.14.0"
 tzdata = "==2023.3"
 pillow = "==9.4.0"
-mysqlclient = "*"
 asgiref = "==3.6.0"
 protobuf = "==3.20.3"
 pyjwt = "==2.6.0"
 pytz = "==2023.3"
 sqlparse = "==0.4.3"
-autopep8 = "*"
 
 [dev-packages]
 autopep8 = "*"

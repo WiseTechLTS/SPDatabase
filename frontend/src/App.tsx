@@ -6,11 +6,10 @@ import HomePage from './pages/HomePage/HomePage'
 import RegisterPage from './pages/RegisterPage/RegisterPage'
 import LoginPage from './pages/LoginPage/LoginPage'
 import SearchPage from './pages/SearchPage/SearchPage'
-import Burger from './components/Burger/Burger'
 
 
 // Components Imports
-// import Navbar from './components/NavBar/NavBar'
+import Navbar from './components/NavBar/NavBar'
 import Footer from './components/Footer/Footer'
 import PromoBanner from './components/PromoBanner/PromoBanner'
 // Util imports
@@ -20,12 +19,9 @@ import PrivateRoute from './utils/PrivateRoute'
 function App() {
 
   return (
-    <Container >
-        <Burger pageWrapId={"page-wrap"} ourterContainerId={"outer-container"} />
-        <div id="page-wrap">
-      <div className="App" id="outer-container">
-        {/* <Navbar /> */}
+    <Container className="App" fluid>
         <PromoBanner />
+        <Navbar />
         <Routes>
           <Route
             path="/"
@@ -40,8 +36,6 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
         </Routes>
           <Footer />
-        </div>
-          </div>
     </Container>
   );
 }

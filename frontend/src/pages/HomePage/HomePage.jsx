@@ -32,8 +32,8 @@ const HomePage = () => {
       <h1>Inventory Page for {user.username}!</h1>
       {products &&
         products.map((product) => (
-          <Table key={product.id}>
-            <thead>
+          <Table className="product-table" key={product.id} striped bordered hover>
+            <thead className="t-head">
               <tr>
                 <th>Product ID</th>
                 <th>Category</th>
@@ -44,7 +44,7 @@ const HomePage = () => {
                 <th>Image</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="t-body" fluid>
               <tr>
                 <td>
                   {product.id}
@@ -52,13 +52,13 @@ const HomePage = () => {
                 <td>
                   {product.category}
                 </td>
-                  {product.name ? product.name : "No Name"}
+                  {product.name}
                 <td>
-                  {product.size ? product.size : "No Size"}
+                  {product.size}
                 </td>
-                  {product.price ? product.price : "No Price"}
+                  {product.price}
                 <td>
-                  {product.in_stock ? "In Stock" : "Out of Stock"}
+                  {product.in_stock}
                 </td>
                 <td>
               {product.image && (

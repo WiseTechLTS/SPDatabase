@@ -1,4 +1,5 @@
 import './PromoBanner.css'
+import { Container } from 'react-bootstrap'
 
 export default function PromoBanner() {
 
@@ -6,14 +7,8 @@ export default function PromoBanner() {
 
 
   return (
-    <div className='container'>
-      <div className="promo-banner">
-        <span>
-          <strong>Free US Shipping with purchase of $99 or more</strong>
-        </span>
-      </div>
-      <div className="promo-banner__close">
-      </div>
-    </div>
+    <Container className="promo-banner" fluid >
+          <h6>WELCOME TO THE SCRAP SOLDIER LIFESTYLE</h6>
+    </Container>
   );
 }
